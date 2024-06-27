@@ -33,5 +33,7 @@ app.MapPost("/AddUser", (User user) => {
     _userService.AddUser(user);
 });
 
+app.UseCors("FormPolicy");
+
 app.Run();
 

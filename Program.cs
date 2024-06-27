@@ -4,6 +4,13 @@ using form_backend;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options => options.AddPolicy("FormPolicy", 
+builder => {
+    builder.WithOrigins("http://localhost:3000/", "https://creating-a-form.vercel.app/")
+    .AllowAnyHeader()
+    .AllowAnyMethod();
+}));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

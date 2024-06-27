@@ -1,0 +1,17 @@
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/form-backend
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/appsettings.Development.json
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/appsettings.json
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/form-backend.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/form-backend.deps.json
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/form-backend.runtimeconfig.json
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/form-backend.pdb
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.AspNetCore.OpenApi.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Microsoft.OpenApi.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Swashbuckle.AspNetCore.Swagger.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/bin/Release/net8.0/publish/Swashbuckle.AspNetCore.SwaggerUI.dll

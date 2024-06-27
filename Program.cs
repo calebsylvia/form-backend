@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Options;
 using form_backend;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options => options.AddPolicy("FormPolicy", 
 builder => {
-    builder.WithOrigins("http://localhost:3000/", "https://creating-a-form.vercel.app/")
+    builder.WithOrigins("http://localhost:3000", "https://creating-a-form.vercel.app")
     .AllowAnyHeader()
     .AllowAnyMethod();
 }));

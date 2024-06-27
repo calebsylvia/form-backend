@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("form-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb4f632658795c64497ff2ca2e0730109c4122c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("form-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("form-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

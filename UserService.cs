@@ -6,7 +6,7 @@ namespace form_backend
         private readonly List<User> _users = new List<User>();
 
         public IEnumerable<User> GetAllUsers() => _users;
-
+ 
         public void AddUser(User user){
             _users.Add(user);
         }

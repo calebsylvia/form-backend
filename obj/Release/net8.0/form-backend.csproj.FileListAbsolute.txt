@@ -36,3 +36,4 @@
 /Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/obj/Release/net8.0/form-backend.pdb
 /Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/obj/Release/net8.0/form-backend.genruntimeconfig.cache
 /Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/obj/Release/net8.0/ref/form-backend.dll
+/Users/calebsylvia/Downloads/Codestack Academy/Internship/form-backend/obj/Release/net8.0/form-backend.sourcelink.json

@@ -11,5 +11,6 @@ namespace form_backend
         public string? Phone { get; set; }
         public string? Address { get; set; }
         public string Password { get; set; }
+        public DateTime SubmitTime { get; set; }
     }
 }

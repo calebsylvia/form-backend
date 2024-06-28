@@ -32,6 +32,7 @@ app.MapGet("/GetUsers", () => _userService.GetAllUsers());
 
 app.MapPost("/AddUser", (User user) => {
     _userService.AddUser(user);
+    return "User " + user.First + " has been added!";
 });
 
 app.UseCors("FormPolicy");

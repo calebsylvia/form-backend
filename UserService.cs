@@ -8,6 +8,7 @@ namespace form_backend
         public IEnumerable<User> GetAllUsers() => _users;
  
         public void AddUser(User user){
+            user._id = _users.Count + 1;
             _users.Add(user);
         }
 

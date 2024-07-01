@@ -94,7 +94,7 @@ namespace form_backend.Migrations
                             Hash = "hashPass",
                             IsAdmin = true,
                             Salt = "saltPass",
-                            SubmitTime = new DateTime(2024, 6, 30, 13, 48, 59, 136, DateTimeKind.Local).AddTicks(6570)
+                            SubmitTime = new DateTime(2024, 6, 30, 23, 14, 42, 564, DateTimeKind.Local).AddTicks(8260)
                         });
                 });
 #pragma warning restore 612, 618

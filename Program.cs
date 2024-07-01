@@ -48,7 +48,6 @@ app.MapPost("/Create", (UserDb db, CreateAccountDTO user) => {
 
         var hash = SaltAndHash(user.Password);
 
-        newUser.ID = db.Users.Count() + 1;
         newUser.Salt = hash.Salt;
         newUser.Hash = hash.Hash;
         newUser.Email = user.Email;
@@ -60,6 +59,32 @@ app.MapPost("/Create", (UserDb db, CreateAccountDTO user) => {
     }else{
         return false;
     }
+});
+
+app.MapPut("/ResetPassword", (UserDb db, ResetPasswordDTO password) => 
+{
+    var user = GetUser(password.Email, db);
+
+
+    if(user != null)
+    {
+        Console.WriteLine("User Not Found");
+        User foundUser = GetUser(password.Email, db);
+
+    if(VerifyPassword(password.OldPassword, foundUser.Salt, foundUser.Hash))
+    {
+        Console.WriteLine("Password Incorrect");
+        var newHash = SaltAndHash(password.NewPassword);
+        
+        foundUser.Salt = newHash.Salt;
+        foundUser.Hash = newHash.Hash;
+
+        db.Update<User>(foundUser);
+    }
+    }
+
+
+    return db.SaveChanges() != 0;
 });
 
 
@@ -81,8 +106,28 @@ app.MapPost("/SubmitForm", (UserDb user, FormModel student) =>
     return user.SaveChanges() != 0;
 });
 
-app.MapPut("/UpdateStudent", (UserDb db, FormModel student) => {
+app.MapPut("/UpdateStudent", (UserDb db, EditAccountDTO student, string Email) => {
 
+    var existingStudent = GetStudent(Email, db);
+
+    if(existingStudent != null)
+    {
+        existingStudent.First = student.First;
+        existingStudent.Last = student.Last;
+        existingStudent.Email = student.Email;
+        existingStudent.Phone = student.Phone;
+        existingStudent.Address = student.Address;
+        existingStudent.DoB = student.DoB;
+    }
+
+    return db.SaveChanges() != 0;
+});
+
+app.MapDelete("/RemoveStudent", (UserDb db, string Email) => 
+{
+    var userToDelete = GetStudent(Email, db);
+    db.FormModels.Remove(userToDelete);
+    return db.SaveChanges() != 0;
 });
 
 app.UseCors("FormPolicy");
@@ -116,9 +161,10 @@ static bool CheckExists(string username, UserDb db)
     return db.Users.SingleOrDefault(u => u.Email == username) != null;
 }
 
-static bool CheckStudentExists(string first, UserDb db)
+
+static bool CheckStudentExists(string Email, UserDb db)
 {
-    return db.FormModels.SingleOrDefault(u => u.First == first) != null;
+    return db.FormModels.SingleOrDefault(u => u.Email == Email) != null;
 }
 
 static bool VerifyPassword(string password, string storedSalt, string storedHash)
@@ -137,9 +183,9 @@ static User GetUser(string username, UserDb db)
     return db.Users.FirstOrDefault(u => u.Email == username);
 }
 
-static FormModel GetStudent(string First, UserDb db)
+static FormModel GetStudent(string Email, UserDb db)
 {
-    return db.FormModels.FirstOrDefault(u => u.First == First);
+    return db.FormModels.FirstOrDefault(u => u.Email == Email);
 }
 
 static IResult Login(LoginDTO login, UserDb db)
@@ -194,3 +240,7 @@ static IResult Login(LoginDTO login, UserDb db)
     return result;
 }
 
+static FormModel GetUserByUsername(string first, UserDb db)
+{
+    return db.FormModels.SingleOrDefault(x => x.First == first);
+}

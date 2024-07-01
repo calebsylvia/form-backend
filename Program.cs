@@ -106,7 +106,7 @@ app.MapPost("/SubmitForm", (UserDb user, FormModel student) =>
     return user.SaveChanges() != 0;
 });
 
-app.MapPut("/UpdateStudent", (UserDb db, EditAccountDTO student, string Email) => {
+app.MapPut("/UpdateStudent/{Email}", (UserDb db, EditAccountDTO student, string Email) => {
 
     var existingStudent = GetStudent(Email, db);
 
@@ -123,7 +123,7 @@ app.MapPut("/UpdateStudent", (UserDb db, EditAccountDTO student, string Email) =
     return db.SaveChanges() != 0;
 });
 
-app.MapDelete("/RemoveStudent", (UserDb db, string Email) => 
+app.MapDelete("/RemoveStudent/{Email}", (UserDb db, string Email) => 
 {
     var userToDelete = GetStudent(Email, db);
     db.FormModels.Remove(userToDelete);

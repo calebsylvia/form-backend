@@ -229,7 +229,7 @@ static IResult Login(LoginDTO login, UserDb db)
 
             var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
-            result = Results.Ok(new { Token = tokenString });
+            result = Results.Ok(new {Token = tokenString, AdminStatus = user.IsAdmin });
         }
         else
         {

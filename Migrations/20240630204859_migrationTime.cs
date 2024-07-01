@@ -45,6 +45,11 @@ namespace form_backend.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.ID);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "ID", "Email", "Hash", "IsAdmin", "Salt", "SubmitTime" },
+                values: new object[] { 1, "test@test.com", "hashPass", true, "saltPass", new DateTime(2024, 6, 30, 13, 48, 59, 136, DateTimeKind.Local).AddTicks(6570) });
         }
 
         /// <inheritdoc />

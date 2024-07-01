@@ -12,7 +12,7 @@ using form_backend.Services.Context;
 namespace form_backend.Migrations
 {
     [DbContext(typeof(UserDb))]
-    [Migration("20240628224438_migrationTime")]
+    [Migration("20240630204859_migrationTime")]
     partial class migrationTime
     {
         /// <inheritdoc />
@@ -88,6 +88,17 @@ namespace form_backend.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Email = "test@test.com",
+                            Hash = "hashPass",
+                            IsAdmin = true,
+                            Salt = "saltPass",
+                            SubmitTime = new DateTime(2024, 6, 30, 13, 48, 59, 136, DateTimeKind.Local).AddTicks(6570)
+                        });
                 });
 #pragma warning restore 612, 618
         }

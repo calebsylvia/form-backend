@@ -10,5 +10,11 @@ namespace form_backend.Services.Context {
         public DbSet<User> Users => Set<User>();
         public DbSet<FormModel> FormModels => Set<FormModel>();
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<User>().HasData(
+                new User{ ID = 1, Email = "test@test.com", Hash="hashPass", Salt = "saltPass", IsAdmin = true, SubmitTime = DateTime.Now}
+            );
+        }
     }
 }

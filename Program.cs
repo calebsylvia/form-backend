@@ -197,10 +197,7 @@ static IResult Login(LoginDTO login, UserDb db)
         User user = GetUser(login.Email, db);
 
             bool hashMatches = VerifyPassword(login.Password, user.Salt, user.Hash);
-            Console.WriteLine($"Hashes match: {hashMatches}");
 
-            Console.WriteLine($"Stored Salt: {user.Salt}");
-            Console.WriteLine($"Stored Hash: {user.Hash}");
         if (user != null && VerifyPassword(login.Password, user.Salt, user.Hash))
         {
             Console.WriteLine("Password verified successfully.");
